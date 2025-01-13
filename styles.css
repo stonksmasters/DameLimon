@@ -483,16 +483,20 @@ nav ul li a:hover {
     }
 }
 
-.about-content img {
-    flex: 1 1 300px;
+/* About Section Image Styling */
+.about-image {
+    flex: 1 1 300px; /* Allows the image to grow and shrink as needed */
+    max-width: 100%; /* Ensures the image doesn't exceed its container's width */
     border-radius: 15px;
     box-shadow: 0 4px 8px var(--shadow-light);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.about-content img:hover {
+.about-image:hover {
     transform: scale(1.02);
+    filter: brightness(1.05);
 }
+
 
 .about-content p {
     flex: 2 1 500px;
