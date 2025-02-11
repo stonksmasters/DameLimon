@@ -1,242 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dame Limon - Music & Art</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Parallax.js Library (Optional) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" integrity="sha512-WFnDvmGzD72AqFL2yz20B1TwAdXqV9uEQszsGpjF4cKaHWxiCjzKb4tM0pBCGlCwIf9wOD2ScCJ9M+FOx8usDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <meta charset="UTF-8">
+  <!-- Responsive Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Page Title -->
+  <title>Dame Limon - Music & Art</title>
+  
+  <!-- SEO & Social Metadata -->
+  <meta name="description" content="Dame Limon is a soulful musician and creative artist offering the latest music releases, art gallery, exclusive events, and more.">
+  <link rel="canonical" href="https://www.damelimon.com/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dame Limon - Music & Art">
+  <meta property="og:description" content="Experience soulful melodies and vibrant artworks by Dame Limon. Discover music, videos, art, events, and news.">
+  <meta property="og:image" content="assets/images/hero-poster.jpg">
+  <meta property="og:url" content="https://www.damelimon.com/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dame Limon - Music & Art">
+  <meta name="twitter:description" content="Experience soulful melodies and vibrant artworks by Dame Limon.">
+  <meta name="twitter:image" content="assets/images/hero-poster.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Note: Unused Parallax.js library reference has been removed -->
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="#home">Dame Limon</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#music">Music</a></li>
-                    <li><a href="#videos">Videos</a></li>
-                    <li><a href="#art">Art</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="menu-toggle" aria-label="Toggle navigation" tabindex="0">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
+<body data-theme="light">
+  <!-- Skip to Content (Accessibility) -->
+  <a href="#main" class="skip-link">Skip to content</a>
+  
+  <!-- Header -->
+  <header role="banner">
+    <div class="container">
+      <div class="logo">
+        <a href="#home">Dame Limon</a>
+      </div>
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#art">Art</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="menu-toggle" aria-label="Toggle navigation" tabindex="0" data-hover-target="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content Wrapper -->
+  <main id="main">
     <!-- Hero Section with Video Background -->
-    <section id="home" class="hero animate">
-        <!-- Video Background -->
-        <video autoplay muted loop class="hero-video">
-            <source src="assets/videos/IMG_2327.mov" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Overlay -->
-        <div class="hero-overlay"></div>
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <h1>Welcome to Dame Limon</h1>
-            <p>Discover my latest music, art, and more.</p>
-            <a href="#music" class="btn-primary">Listen Now</a>
-        </div>
+    <section id="home" class="hero animate" data-scroll>
+      <!-- Video Background -->
+      <video autoplay muted loop playsinline poster="assets/images/hero-poster.jpg" class="hero-video">
+        <source src="assets/videos/IMG_2327.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- Overlay -->
+      <div class="hero-overlay"></div>
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <h1 data-split>Welcome to Dame Limon</h1>
+        <p>Discover my latest music, art, and more.</p>
+        <a href="#music" class="btn-primary" data-hover-target="btn">Listen Now</a>
+      </div>
     </section>
 
     <!-- Music Section -->
-    <section id="music" class="section animate">
-        <div class="container">
-            <h2>Latest Releases</h2>
-            <div class="music-grid">
-                <!-- Example Music Item -->
-                <div class="music-item">
-                    <a href="assets/music/eyez.wav" class="glightbox" data-glightbox="type: audio">
-                        <img src="assets/images/eyes.jpg" alt="Album 1">
-                    </a>
-                    <h3>Eyes</h3>
-                    <audio controls>
-                        <source src="assets/music/eyez.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <!-- Repeat for more albums -->
-                <div class="music-item">
-                    <a href="assets/music/BODY IS MORE REFERENCE.mp3" class="glightbox" data-glightbox="type: audio">
-                        <img src="assets/images/body.jpg" alt="Album 2">
-                    </a>
-                    <h3>Body is More</h3>
-                    <audio controls>
-                        <source src="assets/music/BODY IS MORE REFERENCE.mp3" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <!-- Add more music items as needed -->
+    <section id="music" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>Latest Releases</h2>
+        <div class="music-grid">
+          <!-- Example Music Item -->
+          <div class="music-item">
+            <a href="assets/music/eyez.wav" class="glightbox" data-glightbox="type: audio">
+              <img src="assets/images/eyes.jpg" alt="Album 1" loading="lazy">
+            </a>
+            <h3>Eyes</h3>
+            <div class="audio-player" data-audio-player>
+              <audio controls>
+                <source src="assets/music/eyez.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+              <div class="waveform" data-waveform></div>
             </div>
+          </div>
+          <!-- Repeat for additional music items -->
+          <div class="music-item">
+            <a href="assets/music/BODY IS MORE REFERENCE.mp3" class="glightbox" data-glightbox="type: audio">
+              <img src="assets/images/body.jpg" alt="Album 2" loading="lazy">
+            </a>
+            <h3>Body is More</h3>
+            <div class="audio-player" data-audio-player>
+              <audio controls>
+                <source src="assets/music/BODY IS MORE REFERENCE.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <div class="waveform" data-waveform></div>
+            </div>
+          </div>
+          <!-- Additional music items can be added here -->
         </div>
+      </div>
     </section>
 
     <!-- Videos Section -->
-    <section id="videos" class="section animate">
-        <div class="container">
-            <h2>Videos</h2>
-            <div class="videos-grid">
-                <!-- Example Video Item -->
-                <div class="video-item">
-                    <a href="https://www.youtube.com/watch?v=E9VVEdw5Dng&t=3s" class="glightbox" data-glightbox="type: video">
-                        <img src="assets/images/video-thumbnail1.jpg" alt="GODS COUNTRY">
-                    </a>
-                    <h3>GOD'S COUNTRY</h3>
-                </div>
-                <div class="video-item">
-                    <a href="https://www.youtube.com/watch?v=0opZqh_TprM" class="glightbox" data-glightbox="type: video">
-                        <img src="assets/images/video-thumbnail2.jpg" alt="Lemonade">
-                    </a>
-                    <h3>Music Video Title 2</h3>
-                </div>
-                <!-- Add more video items as needed -->
-            </div>
+    <section id="videos" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>Videos</h2>
+        <div class="videos-grid">
+          <!-- Example Video Item -->
+          <div class="video-item">
+            <a href="https://www.youtube.com/watch?v=E9VVEdw5Dng&t=3s" class="glightbox" data-glightbox="type: video">
+              <img src="assets/images/video-thumbnail1.jpg" alt="GODS COUNTRY" loading="lazy">
+            </a>
+            <h3>GOD'S COUNTRY</h3>
+          </div>
+          <div class="video-item">
+            <a href="https://www.youtube.com/watch?v=0opZqh_TprM" class="glightbox" data-glightbox="type: video">
+              <img src="assets/images/video-thumbnail2.jpg" alt="Lemonade" loading="lazy">
+            </a>
+            <h3>Music Video Title 2</h3>
+          </div>
+          <!-- Additional video items can be added here -->
         </div>
+      </div>
     </section>
 
     <!-- Art Gallery Section -->
-    <section id="art" class="section animate">
-        <div class="container">
-            <h2>Art Gallery</h2>
-            <div class="art-grid">
-                <!-- Example Art Item -->
-                <div class="art-item">
-                    <a href="assets/images/bus.jpg" class="glightbox" data-glightbox="type: image">
-                        <img src="assets/images/bus.jpg" alt="Abstract Painting by Dame Limon" loading="lazy">
-                    </a>
-                </div>
-                <div class="art-item">
-                    <a href="assets/images/shopping_cart.jpg" class="glightbox" data-glightbox="type: image">
-                        <img src="assets/images/shopping_cart.jpg" alt="Modern Sculpture by Dame Limon" loading="lazy">
-                    </a>
-                </div>
-                <!-- Add more art items as needed -->
-            </div>
+    <section id="art" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>Art Gallery</h2>
+        <div class="art-grid">
+          <!-- Example Art Item -->
+          <div class="art-item">
+            <a href="assets/images/bus.jpg" class="glightbox" data-glightbox="type: image">
+              <img src="assets/images/bus.jpg" alt="Abstract Painting by Dame Limon" loading="lazy">
+            </a>
+          </div>
+          <div class="art-item">
+            <a href="assets/images/shopping_cart.jpg" class="glightbox" data-glightbox="type: image">
+              <img src="assets/images/shopping_cart.jpg" alt="Modern Sculpture by Dame Limon" loading="lazy">
+            </a>
+          </div>
+          <!-- Additional art items can be added here -->
         </div>
+      </div>
     </section>
 
-   <!-- About Section -->
-<section id="about" class="section animate">
-    <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content animate">
-            <img src="assets/images/luna.jpg" alt="Dame Limon" loading="lazy" class="about-image">
-            <p>
-                Hello! I'm Dame Limon, a passionate musician and artist dedicated to creating soulful melodies and vibrant artworks. My journey began with a love for music and a desire to express my creativity through visual arts. Through this platform, I aim to share my creations with the world and connect with like-minded individuals who appreciate art and music.
-            </p>
-        </div>
-    </div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>About Me</h2>
+        <article class="about-content">
+          <img src="assets/images/luna.jpg" alt="Dame Limon" loading="lazy" class="about-image">
+          <p>
+            Hello! I'm Dame Limon, a passionate musician and artist dedicated to creating soulful melodies and vibrant artworks. My journey began with a love for music and a desire to express my creativity through visual arts. Through this platform, I aim to share my creations with the world and connect with like-minded individuals who appreciate art and music.
+          </p>
+        </article>
+      </div>
+    </section>
 
     <!-- Events Section -->
-    <section id="events" class="section animate">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="events-list">
-                <!-- Example Event -->
-                <div class="event-item">
-                    <h3>Concert in City</h3>
-                    <p><strong>Date:</strong> January 25, 2025</p>
-                    <p><strong>Venue:</strong> Grand Arena</p>
-                    <a href="#" class="btn-secondary">Buy Tickets</a>
-                </div>
-                <!-- Repeat for more events -->
-                <div class="event-item">
-                    <h3>Art Exhibition</h3>
-                    <p><strong>Date:</strong> February 10, 2025</p>
-                    <p><strong>Venue:</strong> Downtown Gallery</p>
-                    <a href="#" class="btn-secondary">RSVP Now</a>
-                </div>
-                <!-- Add more event items as needed -->
-            </div>
+    <section id="events" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>Upcoming Events</h2>
+        <div class="events-list">
+          <!-- Example Event -->
+          <article class="event-item">
+            <h3>Concert in City</h3>
+            <p><strong>Date:</strong> January 25, 2025</p>
+            <p><strong>Venue:</strong> Grand Arena</p>
+            <a href="#" class="btn-secondary" data-hover-target="btn">Buy Tickets</a>
+          </article>
+          <!-- Repeat for additional events -->
+          <article class="event-item">
+            <h3>Art Exhibition</h3>
+            <p><strong>Date:</strong> February 10, 2025</p>
+            <p><strong>Venue:</strong> Downtown Gallery</p>
+            <a href="#" class="btn-secondary" data-hover-target="btn">RSVP Now</a>
+          </article>
         </div>
+      </div>
     </section>
 
     <!-- Blog/News Section -->
-    <section id="blog" class="section animate">
-        <div class="container">
-            <h2>Latest News</h2>
-            <div class="blog-grid">
-                <!-- Example Blog Post -->
-                <div class="blog-item">
-                    <h3>New Album Release</h3>
-                    <p><em>January 10, 2025</em></p>
-                    <p>Excited to announce my new album "Eyes" is now available on all major streaming platforms. Dive into the soulful melodies and vibrant rhythms that reflect my artistic journey.</p>
-                    <a href="#" class="btn-read">Read More</a>
-                </div>
-                <div class="blog-item">
-                    <h3>Art Workshop Announcement</h3>
-                    <p><em>February 5, 2025</em></p>
-                    <p>Join me for an exclusive art workshop where I'll share my techniques and inspirations. Perfect for budding artists and enthusiasts alike.</p>
-                    <a href="#" class="btn-read">Read More</a>
-                </div>
-                <!-- Add more blog items as needed -->
-            </div>
+    <section id="blog" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>Latest News</h2>
+        <div class="blog-grid">
+          <!-- Example Blog Post -->
+          <article class="blog-item">
+            <h3>New Album Release</h3>
+            <p><em>January 10, 2025</em></p>
+            <p>Excited to announce my new album "Eyes" is now available on all major streaming platforms. Dive into the soulful melodies and vibrant rhythms that reflect my artistic journey.</p>
+            <a href="#" class="btn-read" data-hover-target="btn">Read More</a>
+          </article>
+          <article class="blog-item">
+            <h3>Art Workshop Announcement</h3>
+            <p><em>February 5, 2025</em></p>
+            <p>Join me for an exclusive art workshop where I'll share my techniques and inspirations. Perfect for budding artists and enthusiasts alike.</p>
+            <a href="#" class="btn-read" data-hover-target="btn">Read More</a>
+          </article>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section animate">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="#" method="post" class="contact-form animate">
-                <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" aria-label="Your Message" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
-        </div>
+    <section id="contact" class="section animate" data-scroll>
+      <div class="container">
+        <h2 data-split>Contact Me</h2>
+        <form action="#" method="post" class="contact-form" role="form" aria-label="Contact Form">
+          <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" aria-label="Your Message" required></textarea>
+          <button type="submit" class="btn-primary" data-hover-target="btn">Send Message</button>
+        </form>
+      </div>
     </section>
+  </main>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2025 Dame Limon. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>&copy; 2025 Dame Limon. All rights reserved.</p>
         </div>
-    </footer>
+        <div class="footer-right">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <!-- Parallax.js Library (Optional) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" integrity="sha512-WFnDvmGzD72AqFL2yz20B1TwAdXqV9uEQszsGpjF4cKaHWxiCjzKb4tM0pBCGlCwIf9wOD2ScCJ9M+FOx8usDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Scripts -->
-    <script src="scripts.js" defer></script>
+  <!-- Custom Cursor (Desktop only) -->
+  <div class="custom-cursor" data-cursor></div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" data-scroll-indicator>
+    <!-- Optionally include an icon inside -->
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <!-- Scripts -->
+  <script src="scripts.js" defer></script>
 </body>
 </html>
