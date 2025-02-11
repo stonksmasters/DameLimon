@@ -111,11 +111,14 @@ h1 {
 }
 
 h2 {
-  font-size: var(--text-4xl);
-  font-weight: 600;
-  position: relative;
-  display: inline-block;
-}
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
 
 h2::after {
   content: '';
@@ -237,7 +240,7 @@ nav ul li a:hover {
    6. HERO SECTION
    ========================================================================== */
 .hero {
-  height: 100vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,13 +255,14 @@ nav ul li a:hover {
 
 .hero-video {
   position: absolute;
-  top: 0;
+  top:300pxpx;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 60%;
   object-fit: cover;
   z-index: var(--z-under);
   will-change: opacity;
+
 }
 
 .hero-overlay {
