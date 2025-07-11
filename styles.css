@@ -1034,3 +1034,24 @@ nav ul li a,
 [data-hover-target] {
   cursor: auto !important;
 }
+/* ========================================================================== 
+   OVERRIDE: SHOW POINTER ON ALL INTERACTIVE ELEMENTS 
+   ========================================================================== */
+
+/* Reset any “cursor: none” you applied globally */
+a,
+button,
+input,
+textarea,
+#backToTop,
+.scroll-indicator {
+  cursor: auto !important;
+}
+
+/* Explicitly use the pointer hand on clickable items */
+nav ul li a,
+.menu-toggle,
+#backToTop,
+.scroll-indicator {
+  cursor: pointer !important;
+}
