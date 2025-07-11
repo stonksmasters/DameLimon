@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
          - Hovering over clickable elements: /assets/images/MouseCursor2.png
          - Adds a pressed effect on mousedown/up
     ================================ */
+    /*
     const initCustomCursor = () => {
       const customCursor = document.querySelector('[data-cursor]');
       if (customCursor && window.matchMedia('(pointer: fine)').matches) {
@@ -232,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     };
-  
+  */
     /* ================================
        13. Audio Player Waveform (Placeholder)
     ================================ */
@@ -249,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     };
-  
+
     /* ================================
        14. Initialization Function
     ================================ */
