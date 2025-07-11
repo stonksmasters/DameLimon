@@ -38,6 +38,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Force default cursor in case any CSS removed it -->
+  <style>
+    html, body {
+      cursor: auto !important;
+    }
+  </style>
+
   <!-- Note: Unused Parallax.js library reference has been removed -->
 </head>
 <body data-theme="light">
@@ -259,7 +267,6 @@
     </section>
   </main>
 
-
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="container">
@@ -277,16 +284,12 @@
     </div>
   </footer>
 
-  <!-- Custom Cursor (Desktop only) -->
-  <div class="custom-cursor" data-cursor></div>
-
   <!-- Scroll Indicator -->
   <div class="scroll-indicator" data-scroll-indicator>
     <!-- Optionally include an icon inside -->
     <i class="fas fa-chevron-up"></i>
   </div>
   
-
   <!-- GLightbox JS -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <!-- Scripts -->

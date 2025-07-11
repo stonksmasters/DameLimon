@@ -1021,3 +1021,16 @@ html { scroll-behavior: smooth; }
 .mt-1 { margin-top: var(--space-sm); }
 .mb-1 { margin-bottom: var(--space-sm); }
 .p-1 { padding: var(--space-sm); }
+/* ========================================================================== 
+   FORCE VISIBLE POINTER ON NAV & TOGGLE 
+   ========================================================================== */
+nav ul li a,
+.menu-toggle {
+  cursor: pointer !important;
+}
+/* ========================================================================== 
+   RESET HIDDEN CURSOR ON HOVER-TARGETED ELEMENTS 
+   ========================================================================== */
+[data-hover-target] {
+  cursor: auto !important;
+}
