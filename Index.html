@@ -105,36 +105,148 @@
     <section id="music" class="section animate" data-scroll>
       <div class="container">
         <h2 data-split>Latest Releases</h2>
-        <div class="music-grid">
-          <!-- Example Music Item -->
-          <div class="music-item">
-            <a href="assets/music/eyez.wav" class="glightbox" data-glightbox="type: audio">
-              <img src="assets/images/eyes.jpg" alt="Album 1" loading="lazy">
-            </a>
-            <h3>Eyes</h3>
-            <div class="audio-player" data-audio-player>
-              <audio controls>
-                <source src="assets/music/eyez.wav" type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-              <div class="waveform" data-waveform></div>
+        <div class="track-grid">
+
+          <!-- ── Real tracks ─────────────────────────────────── -->
+          <div class="track-card" data-src="assets/music/eyez.wav" data-type="audio/wav">
+            <div class="track-artwork">
+              <img src="assets/images/eyes.jpg" alt="Eyes" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Play Eyes"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Eyes</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+            <div class="track-controls">
+              <button class="rewind-btn" aria-label="Rewind 5 seconds">
+                <i class="fas fa-rotate-left"></i><span class="rewind-label">5</span>
+              </button>
+              <input type="range" class="track-slider" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+              <span class="track-time">0:00</span>
             </div>
           </div>
-          <!-- Repeat for additional music items -->
-          <div class="music-item">
-            <a href="assets/music/BODY IS MORE REFERENCE.mp3" class="glightbox" data-glightbox="type: audio">
-              <img src="assets/images/body.jpg" alt="Album 2" loading="lazy">
-            </a>
-            <h3>Body is More</h3>
-            <div class="audio-player" data-audio-player>
-              <audio controls>
-                <source src="assets/music/BODY IS MORE REFERENCE.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <div class="waveform" data-waveform></div>
+
+          <div class="track-card" data-src="assets/music/BODY IS MORE REFERENCE.mp3" data-type="audio/mpeg">
+            <div class="track-artwork">
+              <img src="assets/images/body.jpg" alt="Body is More" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Play Body is More"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Body is More</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+            <div class="track-controls">
+              <button class="rewind-btn" aria-label="Rewind 5 seconds">
+                <i class="fas fa-rotate-left"></i><span class="rewind-label">5</span>
+              </button>
+              <input type="range" class="track-slider" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+              <span class="track-time">0:00</span>
             </div>
           </div>
-          <!-- Additional music items can be added here -->
+
+          <div class="track-card" data-src="assets/music/OCEAN v12.mp3" data-type="audio/mpeg">
+            <div class="track-artwork">
+              <img src="assets/images/background1.jpg" alt="Ocean" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Play Ocean"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Ocean</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+            <div class="track-controls">
+              <button class="rewind-btn" aria-label="Rewind 5 seconds">
+                <i class="fas fa-rotate-left"></i><span class="rewind-label">5</span>
+              </button>
+              <input type="range" class="track-slider" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+              <span class="track-time">0:00</span>
+            </div>
+          </div>
+
+          <!-- ── Placeholder tracks ──────────────────────────── -->
+          <div class="track-card track-placeholder">
+            <div class="track-artwork">
+              <img src="assets/images/background2.jpg" alt="Midnight Drift" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Coming Soon"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Midnight Drift</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+          </div>
+
+          <div class="track-card track-placeholder">
+            <div class="track-artwork">
+              <img src="assets/images/background3.jpg" alt="Golden Hour" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Coming Soon"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Golden Hour</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+          </div>
+
+          <div class="track-card track-placeholder">
+            <div class="track-artwork">
+              <img src="assets/images/background4.jpg" alt="Lemon Dreams" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Coming Soon"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Lemon Dreams</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+          </div>
+
+          <div class="track-card track-placeholder">
+            <div class="track-artwork">
+              <img src="assets/images/parallel.jpg" alt="Parallel Lines" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Coming Soon"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Parallel Lines</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+          </div>
+
+          <div class="track-card track-placeholder">
+            <div class="track-artwork">
+              <img src="assets/images/background5.jpg" alt="Gravity" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Coming Soon"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Gravity</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+          </div>
+
+          <div class="track-card track-placeholder">
+            <div class="track-artwork">
+              <img src="assets/images/background6.jpg" alt="Fade to Blue" loading="lazy">
+              <div class="track-overlay">
+                <button class="play-btn" aria-label="Coming Soon"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="track-info">
+              <span class="track-title">Fade to Blue</span>
+              <span class="track-artist">Dame Limon</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

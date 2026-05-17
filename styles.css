@@ -178,11 +178,83 @@ header .logo a {
   font-size: var(--text-xl);
   font-weight: 700;
   color: var(--soft-black);
-  transition: color var(--transition-duration) ease;
+  cursor: pointer;
+
+  /* Bubble shape */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 1.1rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Soap bubble body: semi-transparent blue-white tint */
+  background: radial-gradient(
+    ellipse at 30% 35%,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(180, 220, 255, 0.15) 45%,
+    rgba(140, 190, 255, 0.08) 70%,
+    rgba(200, 240, 255, 0.04) 100%
+  );
+
+  /* Thin translucent border */
+  border: 1px solid rgba(180, 220, 255, 0.35);
+
+  /* Glassy depth */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 2px 8px rgba(100, 180, 255, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(100, 160, 255, 0.08);
+
+  transition: transform var(--transition-duration) ease,
+              box-shadow var(--transition-duration) ease;
+}
+
+/* Iridescent colour-shift sheen — lower-right quadrant */
+header .logo a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 70% 70%,
+    rgba(255, 200, 220, 0.13) 0%,
+    rgba(200, 255, 220, 0.10) 35%,
+    rgba(200, 220, 255, 0.13) 65%,
+    transparent 85%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Specular highlight — small bright oval in upper-left */
+header .logo a::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 28%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.45) 55%,
+    transparent 100%
+  );
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: -1;
 }
 
 header .logo a:hover {
-  color: var(--accent-color);
+  transform: scale(1.07);
+  box-shadow:
+    0 4px 16px rgba(100, 180, 255, 0.22),
+    inset 0 1px 3px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 3px rgba(100, 160, 255, 0.10);
 }
 
 nav ul {
@@ -200,27 +272,175 @@ nav ul li a {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 600;
-  transition: color var(--transition-duration) ease,
-              transform var(--transition-duration) ease;
-  will-change: transform;
+  cursor: pointer;
+
+  /* Bubble shape */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1.1rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Bubble body: semi-transparent blue-white tint */
+  background: radial-gradient(
+    ellipse at 30% 35%,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(180, 220, 255, 0.15) 45%,
+    rgba(140, 190, 255, 0.08) 70%,
+    rgba(200, 240, 255, 0.04) 100%
+  );
+
+  /* Thin translucent border */
+  border: 1px solid rgba(180, 220, 255, 0.35);
+
+  /* Glassy depth */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 2px 8px rgba(100, 180, 255, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(100, 160, 255, 0.08);
+
+  transition: transform var(--transition-duration) ease,
+              box-shadow var(--transition-duration) ease;
+}
+
+/* Iridescent colour-shift sheen — lower-right quadrant */
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 70% 70%,
+    rgba(255, 200, 220, 0.13) 0%,
+    rgba(200, 255, 220, 0.10) 35%,
+    rgba(200, 220, 255, 0.13) 65%,
+    transparent 85%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Specular highlight — small bright oval in upper-left */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 30%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.45) 55%,
+    transparent 100%
+  );
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: -1;
 }
 
 nav ul li a:hover {
   color: var(--accent-color);
   transform: scale(1.05);
+  box-shadow:
+    0 4px 14px rgba(100, 180, 255, 0.22),
+    inset 0 1px 3px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 3px rgba(100, 160, 255, 0.10);
 }
 
 .social-icons a {
   margin-left: var(--space-xs);
   color: var(--text-dark);
   font-size: 1.2rem;
+  text-decoration: none;
   transition: color var(--transition-duration) ease,
-              transform var(--transition-duration) ease;
+              transform var(--transition-duration) ease,
+              box-shadow var(--transition-duration) ease;
+
+  /* Bubble shape */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+
+  /* Soap bubble body: semi-transparent blue-white tint */
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(180, 220, 255, 0.15) 40%,
+    rgba(140, 190, 255, 0.08) 70%,
+    rgba(200, 240, 255, 0.05) 100%
+  );
+
+  /* Thin translucent border */
+  border: 1px solid rgba(180, 220, 255, 0.35);
+
+  /* Glassy depth */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 2px 8px rgba(100, 180, 255, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px rgba(100, 160, 255, 0.08);
+}
+
+/* Keep the icon above the pseudo-element layers */
+.social-icons a i {
+  position: relative;
+  z-index: 3;
+}
+
+/* Iridescent colour-shift sheen on the opposite quadrant */
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 70% 70%,
+    rgba(255, 200, 220, 0.12) 0%,
+    rgba(200, 255, 220, 0.10) 30%,
+    rgba(200, 220, 255, 0.12) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Specular highlight — small bright oval in upper-left */
+.social-icons a::after {
+  content: '';
+  position: absolute;
+  top: 18%;
+  left: 18%;
+  width: 35%;
+  height: 22%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .social-icons a:hover {
   color: var(--accent-color);
   transform: scale(1.2);
+  box-shadow:
+    0 4px 16px rgba(100, 180, 255, 0.25),
+    inset 0 1px 3px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 3px rgba(100, 160, 255, 0.12);
 }
 
 /* Mobile Menu Toggle */
@@ -360,6 +580,95 @@ nav ul li a:hover {
   background-color: var(--hover-soft-blue);
 }
 
+/* Soap bubble effect for data-split headings */
+.section h2[data-split] {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: default;
+
+  /* Bubble shape */
+  position: relative;
+  padding: 0.4rem 1.4rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Bubble body: semi-transparent blue-white tint */
+  background: radial-gradient(
+    ellipse at 30% 35%,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(180, 220, 255, 0.15) 45%,
+    rgba(140, 190, 255, 0.08) 70%,
+    rgba(200, 240, 255, 0.04) 100%
+  );
+
+  /* Thin translucent border */
+  border: 1px solid rgba(180, 220, 255, 0.35);
+
+  /* Glassy depth */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 2px 8px rgba(100, 180, 255, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(100, 160, 255, 0.08);
+
+  transition: transform var(--transition-duration) ease,
+              box-shadow var(--transition-duration) ease;
+}
+
+/* Iridescent colour-shift sheen — lower-right quadrant */
+.section h2[data-split]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 70% 70%,
+    rgba(255, 200, 220, 0.13) 0%,
+    rgba(200, 255, 220, 0.10) 35%,
+    rgba(200, 220, 255, 0.13) 65%,
+    transparent 85%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Specular highlight — overrides decorative bar, becomes upper-left oval */
+.section h2[data-split]::after {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 30%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.45) 55%,
+    transparent 100%
+  );
+  background-color: transparent;
+  margin: 0;
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: -1;
+  transition: none;
+}
+
+.section h2[data-split]:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 4px 14px rgba(100, 180, 255, 0.22),
+    inset 0 1px 3px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 3px rgba(100, 160, 255, 0.10);
+}
+
+/* Prevent the hover-bar colour change from bleeding onto the specular highlight */
+.section h2[data-split]:hover::after {
+  background-color: transparent;
+}
+
 /* ==========================================================================
    8. GRID COMPONENTS (MUSIC, VIDEOS, ART, BLOG)
    ========================================================================== */
@@ -407,6 +716,9 @@ nav ul li a:hover {
 
 .music-item img {
   width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 10px;
   margin-bottom: var(--space-sm);
   transition: transform 0.3s var(--ease-out-quad);
@@ -415,6 +727,10 @@ nav ul li a:hover {
 
 .music-item img:hover {
   transform: scale(1.05);
+}
+
+.music-item:first-child img {
+  object-position: center;
 }
 
 .music-item h3 {
@@ -672,7 +988,7 @@ nav ul li a:hover {
 }
 
 .about-content p:hover {
-  color: var(--accent-color);
+  color: #5a5a4a;
 }
 
 /* ==========================================================================
@@ -950,6 +1266,83 @@ footer {
     border-bottom-right-radius: 15px;
   }
   nav ul.active { display: flex; }
+
+  /* Soap bubble effect for mobile nav links */
+  nav ul.active li a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1.1rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    isolation: isolate;
+
+    /* Bubble body: semi-transparent blue-white tint */
+    background: radial-gradient(
+      ellipse at 30% 35%,
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(180, 220, 255, 0.15) 45%,
+      rgba(140, 190, 255, 0.08) 70%,
+      rgba(200, 240, 255, 0.04) 100%
+    );
+
+    /* Thin translucent border */
+    border: 1px solid rgba(180, 220, 255, 0.35);
+
+    /* Glassy depth */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow:
+      0 2px 8px rgba(100, 180, 255, 0.12),
+      inset 0 1px 2px rgba(255, 255, 255, 0.45),
+      inset 0 -1px 2px rgba(100, 160, 255, 0.08);
+  }
+
+  /* Iridescent colour-shift sheen — lower-right quadrant */
+  nav ul.active li a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 70% 70%,
+      rgba(255, 200, 220, 0.13) 0%,
+      rgba(200, 255, 220, 0.10) 35%,
+      rgba(200, 220, 255, 0.13) 65%,
+      transparent 85%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Specular highlight — small bright oval in upper-left */
+  nav ul.active li a::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 30%;
+    height: 40%;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.45) 55%,
+      transparent 100%
+    );
+    transform: rotate(-30deg);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  nav ul.active li a:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+    box-shadow:
+      0 4px 14px rgba(100, 180, 255, 0.22),
+      inset 0 1px 3px rgba(255, 255, 255, 0.6),
+      inset 0 -1px 3px rgba(100, 160, 255, 0.10);
+  }
+
   nav ul li {
     margin: var(--space-lg) 0;
     text-align: center;
@@ -1021,37 +1414,559 @@ html { scroll-behavior: smooth; }
 .mt-1 { margin-top: var(--space-sm); }
 .mb-1 { margin-bottom: var(--space-sm); }
 .p-1 { padding: var(--space-sm); }
-/* ========================================================================== 
-   FORCE VISIBLE POINTER ON NAV & TOGGLE 
+/* ==========================================================================
+   POINTER CURSOR ON ALL CLICKABLE ELEMENTS
    ========================================================================== */
-nav ul li a,
-.menu-toggle {
-  cursor: pointer !important;
-}
-/* ========================================================================== 
-   RESET HIDDEN CURSOR ON HOVER-TARGETED ELEMENTS 
-   ========================================================================== */
-[data-hover-target] {
-  cursor: auto !important;
-}
-/* ========================================================================== 
-   OVERRIDE: SHOW POINTER ON ALL INTERACTIVE ELEMENTS 
-   ========================================================================== */
-
-/* Reset any “cursor: none” you applied globally */
 a,
 button,
-input,
-textarea,
-#backToTop,
-.scroll-indicator {
-  cursor: auto !important;
-}
-
-/* Explicitly use the pointer hand on clickable items */
-nav ul li a,
 .menu-toggle,
 #backToTop,
-.scroll-indicator {
+.scroll-indicator,
+.btn-primary,
+.btn-read {
   cursor: pointer !important;
+}
+
+/* Text cursor on type-able fields */
+input,
+textarea {
+  cursor: text !important;
+}
+
+/* ==========================================================================
+   MUSIC LIBRARY — TRACK GRID
+   ========================================================================== */
+
+/* Dark section override */
+#music.section {
+  background-color: #0c0c0f;
+}
+
+#music.section h2 {
+  color: #ffffff;
+}
+
+#music.section h2::after {
+  mix-blend-mode: screen;
+}
+
+
+/* Track Grid */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+/* Individual Track Card */
+.track-card {
+  background: #16161a;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-out-quad),
+              box-shadow 0.3s var(--ease-out-quad);
+}
+
+.track-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 213, 79, 0.1);
+}
+
+.track-card.is-playing {
+  box-shadow: 0 0 0 2px var(--accent-color),
+              0 16px 40px rgba(255, 213, 79, 0.2);
+}
+
+/* Artwork container — square via aspect-ratio */
+.track-artwork {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #1e1e24;
+}
+
+.track-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--ease-out-quad),
+              filter 0.4s ease;
+}
+
+.track-card:hover .track-artwork img {
+  transform: scale(1.06);
+  filter: brightness(0.6);
+}
+
+.track-card.is-playing .track-artwork img {
+  filter: brightness(0.55);
+}
+
+/* Overlay (appears on hover / while playing) */
+.track-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.track-card:hover .track-overlay,
+.track-card.is-playing .track-overlay {
+  opacity: 1;
+}
+
+/* Play / Pause Button */
+.play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-color);
+  color: var(--soft-black);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  transition: transform 0.2s var(--ease-out-back),
+              box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding-left: 3px; /* optical centering for play triangle */
+  flex-shrink: 0;
+}
+
+.play-btn.is-pausing {
+  padding-left: 0;
+}
+
+.play-btn:hover {
+  transform: scale(1.14);
+  box-shadow: 0 8px 32px rgba(255, 213, 79, 0.55);
+}
+
+/* Track metadata */
+.track-info {
+  padding: 0.7rem 0.85rem 0.85rem;
+}
+
+.track-title {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: #f0f0f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.01em;
+}
+
+.track-artist {
+  display: block;
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.02em;
+}
+
+/* Pulsing dot next to title while playing */
+.track-card.is-playing .track-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  margin-right: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.35; transform: scale(0.65); }
+}
+
+/* ── Placeholder cards ──────────────────────────────────── */
+.track-placeholder .track-artwork::after {
+  content: 'Soon';
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 5;
+}
+
+.track-placeholder .play-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.track-placeholder .play-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.08);
+}
+
+.track-placeholder .track-title {
+  color: rgba(240, 240, 240, 0.5);
+}
+
+.track-placeholder .track-artist {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Track controls (slider + rewind) ──────────────────── */
+.track-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.85rem 0.8rem;
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+.track-card:hover .track-controls,
+.track-card.is-playing .track-controls {
+  opacity: 1;
+}
+
+/* Rewind −5s button */
+.rewind-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer !important;
+  padding: 0.25rem 0.3rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.rewind-btn:hover {
+  color: var(--accent-color);
+}
+
+.rewind-btn i {
+  font-size: 0.7rem;
+}
+
+.rewind-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Seek slider */
+.track-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer !important;
+  background: linear-gradient(
+    to right,
+    var(--accent-color) var(--fill-pct, 0%),
+    rgba(255, 255, 255, 0.15) var(--fill-pct, 0%)
+  );
+  min-width: 0;
+}
+
+.track-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.track-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.4);
+  box-shadow: 0 0 6px rgba(255, 213, 79, 0.6);
+}
+
+.track-slider::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+.track-slider::-moz-range-progress {
+  background: var(--accent-color);
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* Time display */
+.track-time {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 2.2rem;
+  text-align: right;
+}
+
+/* ── Coming-soon toast ──────────────────────────────────── */
+.music-toast {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: rgba(22, 22, 26, 0.96);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 9500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.music-toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .track-grid {
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .track-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .play-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================================================
+   GLOBAL DARK THEME
+   ========================================================================== */
+
+/* Base */
+body {
+  background-color: #0c0c0f;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Header */
+header {
+  background-color: rgba(12, 12, 15, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+header.scrolled {
+  background-color: rgba(12, 12, 15, 0.97);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+header .logo a {
+  color: #f0f0f0;
+}
+
+/* Nav */
+nav ul li a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile nav dropdown */
+@media (max-width: 768px) {
+  nav ul {
+    background-color: #14141a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.menu-toggle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Social icons */
+.social-icons a {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #f0f0f0;
+}
+
+/* Sections */
+.section {
+  background-color: #0c0c0f;
+}
+
+.section:nth-of-type(even) {
+  background-color: #111116;
+}
+
+/* h2 underline bar — amber on dark */
+.section h2::after {
+  background-color: var(--accent-color);
+  transition: background-color var(--transition-duration) ease;
+}
+
+/* data-split bubble — dark variant globally */
+.section h2[data-split] {
+  background: radial-gradient(
+    ellipse at 30% 35%,
+    rgba(255, 255, 255, 0.11) 0%,
+    rgba(180, 220, 255, 0.05) 45%,
+    rgba(140, 190, 255, 0.03) 70%,
+    rgba(200, 240, 255, 0.01) 100%
+  );
+  border-color: rgba(180, 220, 255, 0.18);
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.45),
+    inset 0 1px 2px rgba(255, 255, 255, 0.11),
+    inset 0 -1px 2px rgba(100, 160, 255, 0.05);
+}
+
+/* Yellow streak in specular highlight — all dark sections */
+.section h2[data-split]::after {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 215, 0, 0.72) 0%,
+    rgba(255, 190, 0, 0.32) 50%,
+    transparent 80%
+  );
+  mix-blend-mode: screen;
+}
+
+/* Hero */
+.hero {
+  background-color: #0c0c0f;
+}
+
+.hero-overlay {
+  background-color: rgba(8, 8, 10, 0.5);
+}
+
+/* Primary button — amber on dark for visibility */
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--soft-black);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 6px 20px rgba(255, 213, 79, 0.35);
+}
+
+/* About section */
+.about-content p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.about-content p:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.about-image {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* Scroll indicator — dark unfilled track */
+.scroll-indicator {
+  background: conic-gradient(
+    var(--accent-color) 0deg,
+    var(--accent-color) var(--scroll-progress, 0deg),
+    #1c1c22 var(--scroll-progress, 0deg),
+    #1c1c22 360deg
+  );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-track {
+  background: #111116;
+}
+
+/* ==========================================================================
+   CONTACT SECTION — DARK STYLING (matches music section)
+   ========================================================================== */
+#contact.section {
+  background-color: #0c0c0f;
+}
+
+#contact.section h2 {
+  color: #ffffff;
+}
+
+#contact.section h2::after {
+  mix-blend-mode: screen;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #16161a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f0f0f0;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+  opacity: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 213, 79, 0.12);
+  background-color: #1a1a20;
+  outline: none;
 }

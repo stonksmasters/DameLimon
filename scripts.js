@@ -196,15 +196,161 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
     /* ================================
-       13. Audio Player Waveform Placeholder
+       13. Music Library Player
     ================================ */
-    const initAudioPlayers = () => {
-      document.querySelectorAll('[data-audio-player]').forEach(player => {
-        const audio = player.querySelector('audio');
-        const waveform = player.querySelector('[data-waveform]');
-        if (audio && waveform) {
-          console.log('Audio player ready for waveform visualization:', audio);
+    const initMusicLibrary = () => {
+      const realCards = document.querySelectorAll('.track-card:not(.track-placeholder)');
+      const placeholderCards = document.querySelectorAll('.track-card.track-placeholder');
+      let currentAudio = null;
+      let currentCard = null;
+      let isSeeking = false;
+
+      const fmt = (s) => {
+        const m = Math.floor(s / 60);
+        return `${m}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+      };
+
+      const showToast = (msg) => {
+        const existing = document.querySelector('.music-toast');
+        if (existing) existing.remove();
+        const toast = document.createElement('div');
+        toast.className = 'music-toast';
+        toast.textContent = msg;
+        document.body.appendChild(toast);
+        requestAnimationFrame(() => toast.classList.add('visible'));
+        setTimeout(() => {
+          toast.classList.remove('visible');
+          setTimeout(() => toast.remove(), 300);
+        }, 2000);
+      };
+
+      const resetControls = (card) => {
+        const slider = card.querySelector('.track-slider');
+        const time   = card.querySelector('.track-time');
+        if (slider) { slider.value = 0; slider.style.setProperty('--fill-pct', '0%'); }
+        if (time)   { time.textContent = '0:00'; }
+      };
+
+      // Pause only — keeps audio alive at current position
+      const pauseCurrent = () => {
+        if (currentAudio) currentAudio.pause();
+        if (currentCard) {
+          currentCard.classList.remove('is-playing');
+          const icon = currentCard.querySelector('.play-btn i');
+          const btn  = currentCard.querySelector('.play-btn');
+          if (icon) icon.classList.replace('fa-pause', 'fa-play');
+          if (btn)  btn.classList.remove('is-pausing');
         }
+      };
+
+      // Full stop — destroys audio and resets controls (used when switching tracks or on end)
+      const stopCurrent = () => {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio = null;
+        }
+        if (currentCard) {
+          currentCard.classList.remove('is-playing');
+          const icon = currentCard.querySelector('.play-btn i');
+          const btn  = currentCard.querySelector('.play-btn');
+          if (icon) icon.classList.replace('fa-pause', 'fa-play');
+          if (btn)  btn.classList.remove('is-pausing');
+          resetControls(currentCard);
+          currentCard = null;
+        }
+      };
+
+      realCards.forEach(card => {
+        const slider    = card.querySelector('.track-slider');
+        const timeEl    = card.querySelector('.track-time');
+        const rewindBtn = card.querySelector('.rewind-btn');
+
+        /* ── Seek slider ── */
+        if (slider) {
+          // While dragging: update fill + time preview without seeking yet
+          slider.addEventListener('mousedown',  () => { isSeeking = true; });
+          slider.addEventListener('touchstart', () => { isSeeking = true; }, { passive: true });
+
+          slider.addEventListener('input', (e) => {
+            e.stopPropagation();
+            const pct = slider.value;
+            slider.style.setProperty('--fill-pct', `${pct}%`);
+            if (currentCard === card && currentAudio && currentAudio.duration) {
+              timeEl.textContent = fmt((pct / 100) * currentAudio.duration);
+            }
+          });
+
+          // On release: commit the seek
+          slider.addEventListener('change', (e) => {
+            e.stopPropagation();
+            isSeeking = false;
+            if (currentCard === card && currentAudio && currentAudio.duration) {
+              currentAudio.currentTime = (slider.value / 100) * currentAudio.duration;
+            }
+          });
+
+          slider.addEventListener('click', (e) => e.stopPropagation());
+        }
+
+        /* ── Rewind −5s ── */
+        if (rewindBtn) {
+          rewindBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentCard === card && currentAudio) {
+              currentAudio.currentTime = Math.max(0, currentAudio.currentTime - 5);
+            }
+          });
+        }
+
+        /* ── Play / Pause (card click) ── */
+        card.addEventListener('click', () => {
+          // Same card: toggle pause ↔ resume
+          if (currentCard === card) {
+            if (currentAudio && !currentAudio.paused) {
+              pauseCurrent();
+            } else if (currentAudio && currentAudio.paused) {
+              currentAudio.play().catch(stopCurrent);
+              card.classList.add('is-playing');
+              const icon = card.querySelector('.play-btn i');
+              const btn  = card.querySelector('.play-btn');
+              if (icon) icon.classList.replace('fa-play', 'fa-pause');
+              if (btn)  btn.classList.add('is-pausing');
+            }
+            return;
+          }
+
+          // Different card: stop current, start fresh
+          stopCurrent();
+
+          const audio = new Audio(card.dataset.src);
+          currentAudio = audio;
+          currentCard  = card;
+
+          card.classList.add('is-playing');
+          const icon = card.querySelector('.play-btn i');
+          const btn  = card.querySelector('.play-btn');
+          if (icon) icon.classList.replace('fa-play', 'fa-pause');
+          if (btn)  btn.classList.add('is-pausing');
+
+          // Drive slider + time display
+          audio.addEventListener('timeupdate', () => {
+            if (isSeeking || !audio.duration) return;
+            const pct = (audio.currentTime / audio.duration) * 100;
+            if (slider) {
+              slider.value = pct;
+              slider.style.setProperty('--fill-pct', `${pct}%`);
+            }
+            if (timeEl) timeEl.textContent = fmt(audio.currentTime);
+          });
+
+          audio.play().catch(stopCurrent);
+          audio.addEventListener('ended', stopCurrent);
+        });
+      });
+
+      /* ── Placeholders ── */
+      placeholderCards.forEach(card => {
+        card.addEventListener('click', () => showToast('Coming soon — stay tuned'));
       });
     };
 
@@ -217,8 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initSmoothScrolling();
       initBackToTop();
       initScrollReveal();
-      // initCustomCursor();  <-- removed
-      initAudioPlayers();
+      initMusicLibrary();
       initScrollIndicatorClick();
       window.addEventListener('scroll', handleScroll);
     };
